@@ -7,18 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class FirstLesson8Test {
+public class FirstLesson8Test extends BaseTest{
 
-    WebDriver driver;
 
     @Test
     public void someChecks() {
-
-        System.setProperty("webdriver.chrome.driver", "/Users/tatiana/mySecondProjectAutomation/src/main/resources/drivers/chromedriver");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("https://github.com/login");
 
         WebElement loginField = driver.findElement(By.id("login_field"));
         loginField.sendKeys("ganzyukr");
@@ -39,6 +32,5 @@ public class FirstLesson8Test {
 
         Assert.assertTrue(actualResult.equals(expectedResult));
 
-        driver.quit();
     }
 }
