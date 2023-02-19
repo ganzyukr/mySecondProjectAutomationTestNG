@@ -10,9 +10,6 @@ import java.util.concurrent.TimeUnit;
 
 public class HW_8_XPath {
 
-
-    public class HW8 {
-
         WebDriver driver;
 
         @Test
@@ -119,6 +116,6 @@ public class HW_8_XPath {
 
             driver.quit();
         }
-    }
+
 
 }
