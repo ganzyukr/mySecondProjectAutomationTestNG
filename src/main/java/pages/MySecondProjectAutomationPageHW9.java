@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MySecondProjectAutomationPageHW9 extends BasePage{
+public class MySecondProjectAutomationPageHW9 extends BasePage {
 
     private WebElement issuesButton = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
 

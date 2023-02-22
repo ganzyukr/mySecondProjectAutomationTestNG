@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
-public class IssuesHW9Test extends BaseTest{
+public class IssuesHW9Test extends BaseTest {
 
     @Test
-    public void checkCreatingAnIssueOnTheIssuePage(){
+    public void checkCreatingAnIssueOnTheIssuePage() {
         HomePage homePage = new HomePage(driver);
         homePage.goToLoginPage();
         LoginPage loginPage = new LoginPage(driver);
@@ -36,7 +36,7 @@ public class IssuesHW9Test extends BaseTest{
     }
 
     @Test
-    public void checkIsTheIssueCreated(){
+    public void checkIsTheIssueCreated() {
         HomePage homePage = new HomePage(driver);
         homePage.goToLoginPage();
         LoginPage loginPage = new LoginPage(driver);

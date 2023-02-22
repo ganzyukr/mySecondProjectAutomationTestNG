@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class NewIssuesPageHW9 extends BasePage{
+public class NewIssuesPageHW9 extends BasePage {
 
     private WebElement titleField = driver.findElement(By.xpath("//*[@id=\"issue_title\"]"));
     private WebElement writeField = driver.findElement(By.xpath("//*[@id=\"issue_body\"]"));
@@ -15,7 +15,7 @@ public class NewIssuesPageHW9 extends BasePage{
         super(driver);
     }
 
-    public CreatedIssuesPageHW9 successfulCreationIssues(String title, String write){
+    public CreatedIssuesPageHW9 successfulCreationIssues(String title, String write) {
         titleField.click();
         titleField.sendKeys(title);
         writeField.click();
