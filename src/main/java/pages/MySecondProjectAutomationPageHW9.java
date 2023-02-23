@@ -8,7 +8,6 @@ public class MySecondProjectAutomationPageHW9 extends BasePage {
 
     private WebElement issuesButton = driver.findElement(By.xpath("//*[@id=\"issues-tab\"]"));
 
-
     public MySecondProjectAutomationPageHW9(WebDriver driver) {
         super(driver);
     }

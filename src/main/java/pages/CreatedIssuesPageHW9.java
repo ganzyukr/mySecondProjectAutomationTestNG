@@ -16,5 +16,4 @@ public class CreatedIssuesPageHW9 extends BasePage {
     public CreatedIssuesPageHW9(WebDriver driver) {
         super(driver);
     }
-
 }
