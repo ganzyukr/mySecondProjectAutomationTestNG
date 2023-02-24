@@ -1,5 +1,6 @@
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,7 +38,7 @@ public class FirstLesson8Test {
 
         System.out.println(actualResult);
 
-        Assert.assertTrue(actualResult.equals(expectedResult));
+        Assertions.assertTrue(actualResult.equals(expectedResult));
 
         driver.quit();
     }
