@@ -54,6 +54,7 @@ public class Address {
         this.RegionTypes = regionTypes;
         this.RegionTypesCode = regionTypesCode;
     }
+
     @Getter
     public String getPresent() {
         return Present;

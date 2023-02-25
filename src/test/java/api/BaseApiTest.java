@@ -11,8 +11,6 @@ public class BaseApiTest {
 
     protected RequestSpecification requestSpecification;
     protected ResponseSpecification responseSpecification;
-
-
     @BeforeEach
     public void setSpecs() {
         requestSpecification = new RequestSpecBuilder()
@@ -22,7 +20,5 @@ public class BaseApiTest {
         responseSpecification = new ResponseSpecBuilder()
                 .log(LogDetail.ALL)
                 .build();
-
     }
-
 }
