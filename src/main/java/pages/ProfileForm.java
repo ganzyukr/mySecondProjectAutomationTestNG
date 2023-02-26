@@ -6,10 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class ProfileForm extends BasePage {
 
+    private final static String TITLE = "ProfileForm page";
+
     private WebElement yourRepositoriesButton = driver.findElement(By.xpath("//a[text()='Your repositories']"));
 
     public ProfileForm(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 
     public RepositoriesPage goToRepositoriesPage() {
