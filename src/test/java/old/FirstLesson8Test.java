@@ -1,15 +1,27 @@
+
 package old;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
 
-public class FirstLesson8Test extends BaseTest {
+public class FirstLesson8Test {
+
+    WebDriver driver;
 
     @Test
     public void someChecks() {
+
+        System.setProperty("webdriver.chrome.driver", "/Users/tatiana/mySecondProjectAutomation/src/main/resources/drivers/chromedriver");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.get("https://github.com/login");
 
         WebElement loginField = driver.findElement(By.id("login_field"));
         loginField.sendKeys("ganzyukr");
@@ -28,6 +40,8 @@ public class FirstLesson8Test extends BaseTest {
 
         System.out.println(actualResult);
 
-        Assertions.assertEquals(actualResult, expectedResult);
+        Assertions.assertTrue(actualResult.equals(expectedResult));
+
+        driver.quit();
     }
 }
