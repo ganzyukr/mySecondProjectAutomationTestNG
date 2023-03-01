@@ -1,7 +1,7 @@
-package old;
+package ui;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.*;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class SomeTest extends BaseTest{
         HomePage homePage = new HomePage(driver);
         homePage.goToLoginPage();
         LoginPage loginPage = new LoginPage(driver);
-        Assertions.assertTrue(loginPage.getLogo().isDisplayed());
+        Assert.assertTrue(loginPage.getLogo().isDisplayed());
     }
 
     @Test
@@ -29,6 +29,7 @@ public class SomeTest extends BaseTest{
         profileForm.goToRepositoriesPage();
 
         List<String> expectedRepositoriesList = new ArrayList<>();
+        expectedRepositoriesList.add("mySecondProjectAutomationTestNG");
         expectedRepositoriesList.add("mySecondProjectAutomation");
         expectedRepositoriesList.add("mySecondProject");
         expectedRepositoriesList.add("Project_Course_Work");
@@ -38,6 +39,6 @@ public class SomeTest extends BaseTest{
 
         RepositoriesPage repositoriesPage = new RepositoriesPage(driver);
 
-        Assertions.assertEquals(expectedRepositoriesList, repositoriesPage.getRepositories());
+        Assert.assertEquals(expectedRepositoriesList, repositoriesPage.getRepositories());
     }
 }

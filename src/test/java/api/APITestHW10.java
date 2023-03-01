@@ -1,25 +1,26 @@
 package api;
 
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItems;
+
 
 public class APITestHW10 extends BaseApiTest{
     String API_key = "2c29b8b0ade45979970aaddf0f261b14";
     private Map<String, Object> reqBody = new HashMap<>();
 
-    @BeforeEach
+    @BeforeMethod
     public void setReqBody() {
 
         Map<String, Object> methodProperties = new HashMap<>();
@@ -100,7 +101,7 @@ public class APITestHW10 extends BaseApiTest{
 
 
         System.out.println(populationPointsHW10);
-        Assertions.assertTrue(populationPointsHW10.getDescription().contains("Абазівка"));
+        Assert.assertTrue(populationPointsHW10.getDescription().contains("Абазівка"));
     }
     @Test
     public void checkAbrazivkaIsDescriptionWithPojoUsage2() {
@@ -116,6 +117,6 @@ public class APITestHW10 extends BaseApiTest{
 
 
         System.out.println(populationPointsHW10);
-        Assertions.assertTrue(populationPointsHW10.getDescription().contains("Абазівка"));
+        Assert.assertTrue(populationPointsHW10.getDescription().contains("Абазівка"));
     }
 }

@@ -1,13 +1,14 @@
-package old;
+package ui;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.xml.dom.Tag;
 import pages.*;
 
 public class IssuesHW9Test extends BaseTest {
-
+    @Tag(name = "regression")
     @Test
     public void checkCreatingAnIssueOnTheIssuePage() {
         Logger logger = LogManager.getLogger();                                                // Створюємо об'єкт класу логування
@@ -36,10 +37,10 @@ public class IssuesHW9Test extends BaseTest {
         newIssuesPageHW9.successfulCreationIssues(textName, writeName);
 
         CreatedIssuesPageHW9 createdIssuesPageHW9 = new CreatedIssuesPageHW9(driver);
-        Assertions.assertEquals(textName, createdIssuesPageHW9.getTextName());
+        Assert.assertEquals(textName, createdIssuesPageHW9.getTextName());
         logger.info("checkCreatingAnIssueOnTheIssuePage Test passed successfully!");         // Логування без кольору
     }
-
+    @Tag(name = "regression")
     @Test
     public void checkIsTheIssueCreated() {
         Logger logger = LogManager.getLogger();                                                // Створюємо об'єкт класу логування
@@ -60,7 +61,7 @@ public class IssuesHW9Test extends BaseTest {
 
         IssuesPageHW9 issuesPageHW9 = new IssuesPageHW9(driver);
         String textIssues = "Update requrements";
-        Assertions.assertEquals(textIssues, issuesPageHW9.getTextIssues());
+        Assert.assertEquals(textIssues, issuesPageHW9.getTextIssues());
         logger.info("checkIsTheIssueCreated Test passed successfully!");                     // Логування без кольору
     }
 }

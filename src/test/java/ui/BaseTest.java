@@ -1,13 +1,12 @@
-package old;
+package ui;
 
-import helpers.Level;
-import static helpers.ColorPrinter.printColorMessage;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
 import java.util.concurrent.TimeUnit;
 
 
@@ -17,9 +16,9 @@ public class BaseTest {
 
     public WebDriver driver;
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/tatiana/mySecondProjectAutomation/src/main/resources/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/tatiana/mySecondProjectAutomationTestNG/src/main/resources/drivers/chromedriver");
         Logger logger = LogManager.getLogger();                                              // Створюємо об'єкт класу логування
         logger.info("Chrome driver object creation starting");                            // Логування без кольору
         driver = new ChromeDriver();
@@ -29,7 +28,7 @@ public class BaseTest {
         logger.info("ChromeDriver was started successfully");                             // Логування без кольору
     }
 
-    @AfterEach
+    @AfterMethod
     public void tearDown() {
         driver.quit();
         Logger logger = LogManager.getLogger();                                                                    // Створюємо об'єкт класу логування

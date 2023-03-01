@@ -1,10 +1,11 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +38,7 @@ public class HW_8_XPath {
             String expectedResult = "Start coding instantly with GitHub Codespaces";
             System.out.println(actualResult);
 
-            Assertions.assertTrue(actualResult.equals(expectedResult));
+            Assert.assertTrue(actualResult.equals(expectedResult));
 
             /** Start HW-8 num_1 **/
 
@@ -73,7 +74,7 @@ public class HW_8_XPath {
             String expectedResult1 = "No description, website, or topics provided.";
             System.out.println(actualResult);
 
-            Assertions.assertTrue(actualResult1.equals(expectedResult1));
+            Assert.assertTrue(actualResult1.equals(expectedResult1));
 
 
             WebElement textLanguages = driver.findElement(By.xpath("//h2[text()='Languages']"));
@@ -81,7 +82,7 @@ public class HW_8_XPath {
             String expectedResult2 = "Languages";
             System.out.println(actualResult);
 
-            Assertions.assertTrue(actualResult2.equals(expectedResult2));
+            Assert.assertTrue(actualResult2.equals(expectedResult2));
 
 
             WebElement actionsButton = driver.findElement(By.xpath("//a[@id='actions-tab']"));
@@ -101,14 +102,14 @@ public class HW_8_XPath {
             String expectedResult3 = "Get started with GitHub Actions";
             System.out.println(actualResult);
 
-            Assertions.assertTrue(actualResult3.equals(expectedResult3));
+            Assert.assertTrue(actualResult3.equals(expectedResult3));
 
             WebElement textCategories = driver.findElement(By.xpath("//input[@id=\"query\"]"));
             String actualResult4 = textCategories.getText();
             String expectedResult4 = "Categories";
             System.out.println(actualResult);
 
-            Assertions.assertTrue(actualResult4.equals(expectedResult4));
+            Assert.assertTrue(actualResult4.equals(expectedResult4));
 
             WebElement pagesButton = driver.findElement(By.xpath("//a[text()='Configure'][2]"));
             pagesButton.click();

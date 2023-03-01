@@ -1,12 +1,9 @@
 package api;
 
-
-import com.sun.javafx.collections.MappingChange;
 import io.restassured.http.ContentType;
-import io.restassured.specification.Argument;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
@@ -17,14 +14,14 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+
 
 public class APITest extends BaseApiTest {
 
     String API_key = "2c29b8b0ade45979970aaddf0f261b14";
     private Map<String, Object> reqBody = new HashMap<>();
 
-    @BeforeEach
+    @BeforeMethod
     public void setReqBody() {
 
         Map<String, Object> methodProperties = new HashMap<>();
@@ -125,7 +122,7 @@ public class APITest extends BaseApiTest {
                 .body().jsonPath().getList("data[0].Addresses", Address.class);
 
         System.out.println(addressesData);
-        addressesData.forEach(el -> Assertions.assertTrue(el.getPresent().contains("Київ")));
+        addressesData.forEach(el -> Assert.assertTrue(el.getPresent().contains("Київ")));
     }
     @Test
     public void checkKyivIsPresentWithPojoUsage2() {
@@ -140,6 +137,6 @@ public class APITest extends BaseApiTest {
                 .body().jsonPath().getList("data[0].Addresses", Address.class);
 
         System.out.println(addressesData);
-        addressesData.forEach(el -> Assertions.assertTrue(el.getPresent().contains("Київ")));
+        addressesData.forEach(el -> Assert.assertTrue(el.getPresent().contains("Київ")));
     }
 }
