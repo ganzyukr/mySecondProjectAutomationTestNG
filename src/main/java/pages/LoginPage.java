@@ -1,10 +1,15 @@
 package pages;
 
+import helpers.Level;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static helpers.ColorPrinter.printColorMessage;
+
 public class LoginPage extends BasePage{
+
+    private final static String TITLE = "Login page";
 
     private WebElement loginField = driver.findElement(By.id("login_field"));
     private WebElement passwordField = driver.findElement(By.xpath("//*[@id=\"password\"]"));
@@ -14,7 +19,7 @@ public class LoginPage extends BasePage{
 
 
     public LoginPage(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 
     public WebElement getLogo() {
@@ -25,6 +30,8 @@ public class LoginPage extends BasePage{
         loginField.sendKeys(login);
         passwordField.sendKeys(password);
         signInButton.click();
+        log.info("Successful authorization");                                     // Логування без кольору
+        printColorMessage("Successful authorization", log, Level.INFO);     // Логування кольорове
         return new MainPage(driver);
     }
 }

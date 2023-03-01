@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 
 public class CreatedIssuesPageHW9 extends BasePage {
 
+    private final static String TITLE = "CreatedIssues page";
+
     private WebElement textNameField = driver
             .findElement(By.xpath("//bdi[(text()='Update requrements')]"));
 
@@ -14,6 +16,6 @@ public class CreatedIssuesPageHW9 extends BasePage {
     }
 
     public CreatedIssuesPageHW9(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 }

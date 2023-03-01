@@ -1,5 +1,7 @@
 package old;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.*;
@@ -8,6 +10,8 @@ public class IssuesHW9Test extends BaseTest {
 
     @Test
     public void checkCreatingAnIssueOnTheIssuePage() {
+        Logger logger = LogManager.getLogger();                                                // Створюємо об'єкт класу логування
+        logger.info("checkCreatingAnIssueOnTheIssuePage Test start:");                      // Логування без кольору
         HomePage homePage = new HomePage(driver);
         homePage.goToLoginPage();
         LoginPage loginPage = new LoginPage(driver);
@@ -33,10 +37,13 @@ public class IssuesHW9Test extends BaseTest {
 
         CreatedIssuesPageHW9 createdIssuesPageHW9 = new CreatedIssuesPageHW9(driver);
         Assertions.assertEquals(textName, createdIssuesPageHW9.getTextName());
+        logger.info("checkCreatingAnIssueOnTheIssuePage Test passed successfully!");         // Логування без кольору
     }
 
     @Test
     public void checkIsTheIssueCreated() {
+        Logger logger = LogManager.getLogger();                                                // Створюємо об'єкт класу логування
+        logger.info("checkIsTheIssueCreated Test start:");                                  // Логування без кольору
         HomePage homePage = new HomePage(driver);
         homePage.goToLoginPage();
         LoginPage loginPage = new LoginPage(driver);
@@ -54,5 +61,6 @@ public class IssuesHW9Test extends BaseTest {
         IssuesPageHW9 issuesPageHW9 = new IssuesPageHW9(driver);
         String textIssues = "Update requrements";
         Assertions.assertEquals(textIssues, issuesPageHW9.getTextIssues());
+        logger.info("checkIsTheIssueCreated Test passed successfully!");                     // Логування без кольору
     }
 }
